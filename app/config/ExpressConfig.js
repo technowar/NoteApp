@@ -1,3 +1,5 @@
+'use strict';
+
 var express = require('express');
 var webpack = require('webpack');
 var webpackDev = require('webpack-dev-middleware');

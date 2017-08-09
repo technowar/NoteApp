@@ -1,5 +1,11 @@
+'use strict';
+
+var Index = require('../routes');
+var Entry = require('../routes/Entry');
+
 module.exports = function(App) {
-  App.use('/', function(req, res) {
-    res.sendFile('../../public/index.html');
-  });
+  App.get('/', Index);
+
+  App.get('/entry', Entry.GetEntries);
+  App.post('/entry', Entry.PostEntry);
 };
