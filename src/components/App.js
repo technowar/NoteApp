@@ -1,8 +1,10 @@
 import React from 'react'
 
+import PostEntry from '../containers/PostEntry'
+
 const App = () => (
   <div className='container'>
-    <h1>Hello</h1>
+    <PostEntry/>
   </div>
 )
 

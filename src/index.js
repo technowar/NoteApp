@@ -10,7 +10,7 @@ import './index.css'
 
 render(
   <Provider store={createStore(reducer)}>
-    <App />
+    <App/>
   </Provider>,
   document.getElementById('app')
 )
