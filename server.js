@@ -12,6 +12,8 @@ var App = express();
 expressConfig(App);
 routeConfig(App);
 
+require('./app/models/entry');
+
 connect()
   .on('error', console.log)
   .on('disconnected', connect)
