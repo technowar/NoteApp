@@ -27,6 +27,8 @@ let PostEntry = ({ dispatch }) => {
               return
             }
 
+            dispatch(addEntry(input.value))
+
             input.value = ''
           }}
         />

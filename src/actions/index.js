@@ -1,6 +1,8 @@
 import { ADD_ENTRY } from '../constants'
 
-export const addEntry = text => ({
-  type: ADD_ENTRY,
-  text
-})
+export function addEntry(text) {
+  return {
+    type: ADD_ENTRY,
+    text
+  }
+}
