@@ -1,4 +1,4 @@
-const makeRequest = (method, url, args) => {
+export function makeRequest (method, url, args) {
   return new Promise((resolve, reject) => {
     const xhr = new XMLHttpRequest()
 
@@ -43,5 +43,3 @@ const makeRequest = (method, url, args) => {
     }
   })
 }
-
-export default makeRequest

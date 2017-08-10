@@ -1,18 +1,21 @@
 'use strict';
 
+var fs = require('fs');
+var path = require('path');
 var express = require('express');
 var mongoose = require('mongoose');
 
-var expressConfig = require('./app/config/ExpressConfig');
-var routeConfig = require('./app/config/RouteConfig');
-var config = require('./app/config.json');
-
+var models = path.join(__dirname, 'app/models');
 var App = express();
 
-expressConfig(App);
-routeConfig(App);
+fs.readdirSync(models).forEach(function(file) {
+  if (~file.indexOf('.js')) {
+    require(path.join(models, file));
+  }
+});
 
-require('./app/models/entry');
+require('./app/config/ExpressConfig')(App);
+require('./app/config/RouteConfig')(App);
 
 connect()
   .on('error', console.log)
@@ -30,6 +33,7 @@ function listen() {
 }
 
 function connect() {
+  var config = require('./app/config.json');
   var database = [
     'mongodb://',
     config.db.username,
