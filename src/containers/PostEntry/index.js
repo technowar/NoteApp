@@ -6,7 +6,7 @@ import {
   addEntry,
   addEntrySuccess,
   addEntryFail
-} from '../../actions'
+} from '../../actions/entry'
 
 import './index.css'
 
