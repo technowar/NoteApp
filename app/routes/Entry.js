@@ -21,5 +21,15 @@ exports.PostEntry = function(request, response, next) {
 }
 
 exports.GetEntries = function(request, response, next) {
-  console.log('Get Entries');
+  Entry.find({
+    isDeleted: false
+  }, function(error, data) {
+    if (error) {
+      return response.status(400).send({
+        message: error._message
+      });
+    }
+
+    response.status(200).send(data);
+  });
 }
