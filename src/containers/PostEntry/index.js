@@ -6,6 +6,18 @@ import { addEntry } from '../../actions'
 let PostEntry = ({ dispatch }) => {
   let input
 
+  const onHandleSubmit = e => {
+    e.preventDefault()
+
+    if (!input.value.trim()) {
+      return
+    }
+
+    dispatch(addEntry(input.value))
+
+    input.value = ''
+  }
+
   return (
     <div className='textarea-container'>
       <form>        
@@ -20,17 +32,7 @@ let PostEntry = ({ dispatch }) => {
           className='button-primary'
           type='submit'
           value='Submit'
-          onClick={e => {
-            e.preventDefault()
-
-            if (!input.value.trim()) {
-              return
-            }
-
-            dispatch(addEntry(input.value))
-
-            input.value = ''
-          }}
+          onClick={onHandleSubmit}
         />
       </form>
     </div>
