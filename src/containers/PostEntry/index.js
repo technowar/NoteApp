@@ -8,6 +8,8 @@ import {
   addEntryFail
 } from '../../actions'
 
+import './index.css'
+
 let PostEntry = ({ dispatch }) => {
   let input
 
@@ -31,22 +33,24 @@ let PostEntry = ({ dispatch }) => {
   }
 
   return (
-    <div className='textarea-container'>
-      <form>        
-        <textarea
-          className='u-full-width'
-          placeholder={'What\'s happening?'}
-          ref={node => {
-            input = node
-          }}>
-        </textarea>
-        <input
-          className='button-primary'
-          type='submit'
-          value='Submit'
-          onClick={onHandleSubmit}
-        />
-      </form>
+    <div className='row'>
+        <div className='eight columns offset-by-two'>
+          <form>
+            <textarea
+              className='u-full-width'
+              placeholder={'What\'s happening?'}
+              ref={node => {
+                input = node
+              }}>
+            </textarea>
+            <input
+              className='button-primary'
+              type='submit'
+              value='Submit'
+              onClick={onHandleSubmit}
+            />
+          </form>
+        </div>
     </div>
   )
 }
