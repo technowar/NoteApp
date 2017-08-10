@@ -1,13 +1,20 @@
-import { makeRequest } from '../helpers/makeRequest'
-import { ADD_ENTRY } from '../constants'
+import {
+  ADD_ENTRY,
+  ADD_ENTRY_SUCCESS,
+  ADD_ENTRY_FAIL
+} from '../constants'
 
-export function addEntry(text) {
-  const response = makeRequest('POST', '/entry', {
-    entry: text
-  });
+export const addEntry = text => ({
+  type: ADD_ENTRY,
+  text
+})
 
-  return {
-    type: ADD_ENTRY,
-    payload: response
-  }
-}
+export const addEntrySuccess = response => ({
+  type: ADD_ENTRY_SUCCESS,
+  response
+})
+
+export const addEntryFail = error => ({
+  type: ADD_ENTRY_FAIL,
+  error
+})

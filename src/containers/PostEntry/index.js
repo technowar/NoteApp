@@ -1,7 +1,12 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import { addEntry } from '../../actions'
+import { makeRequest } from '../../helpers/makeRequest'
+import {
+  addEntry,
+  addEntrySuccess,
+  addEntryFail
+} from '../../actions'
 
 let PostEntry = ({ dispatch }) => {
   let input
@@ -14,6 +19,13 @@ let PostEntry = ({ dispatch }) => {
     }
 
     dispatch(addEntry(input.value))
+
+    makeRequest('POST', '/entry', {
+      entry: input.value
+    }).then(
+      response => dispatch(addEntrySuccess(response)),
+      error => dispatch(addEntryFail(error))
+    )
 
     input.value = ''
   }

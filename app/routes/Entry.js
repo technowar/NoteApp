@@ -11,8 +11,8 @@ exports.PostEntry = function(request, response, next) {
 
   entry.save(function(error, data) {
     if (error) {
-      return response.status(500).send({
-        message: 'Internal Server Error'
+      return response.status(400).send({
+        message: error._message
       });
     }
 
