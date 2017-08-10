@@ -3,12 +3,6 @@
 var mongoose = require('mongoose');
 
 var EntrySchema = new mongoose.Schema({
-  _id: {
-    type: String,
-    required: true,
-    unique: true,
-    index: true
-  },
   entry: {
     type: String,
     required: true

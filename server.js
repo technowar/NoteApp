@@ -43,6 +43,8 @@ function connect() {
     config.db.database
   ].join('');
 
+  mongoose.Promise = global.Promise;
+
   return mongoose.connect(database, {
     socketTimeoutMS: 30000,
     keepAlive: true,

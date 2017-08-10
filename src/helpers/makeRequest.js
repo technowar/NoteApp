@@ -27,15 +27,15 @@ export function makeRequest (method, url, args) {
     }
 
     xhr.onload = () => {
-      if (this.status >= 200 && this.status < 300) {
-        return resolve(this.response)
+      if (xhr.status >= 200 && xhr.status < 300) {
+        return resolve(xhr.response)
       }
 
-      reject(this.statusText)
+      reject(xhr.statusText)
     }
 
     xhr.onerror = () => {
-      reject(this.statusText)
+      reject(xhr.statusText)
     }
 
     xhr.ontimeout = () => {
