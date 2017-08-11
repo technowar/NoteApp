@@ -1,4 +1,6 @@
-import { ADD_ENTRY } from '../constants'
+import {
+  ADD_ENTRY
+} from '../actions/entry'
 
 const entry = (state = [], action) => {
   switch (action.type) {

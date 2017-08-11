@@ -18,7 +18,7 @@ exports.PostEntry = function(request, response, next) {
 
     response.status(201).send(data);
   });
-}
+};
 
 exports.GetEntries = function(request, response, next) {
   Entry.find({
@@ -32,4 +32,4 @@ exports.GetEntries = function(request, response, next) {
 
     response.status(200).send(data);
   });
-}
+};

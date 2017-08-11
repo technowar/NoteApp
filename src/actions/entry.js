@@ -1,8 +1,6 @@
-import {
-  ADD_ENTRY,
-  ADD_ENTRY_SUCCESS,
-  ADD_ENTRY_FAIL
-} from '../constants'
+export const ADD_ENTRY = 'ADD_ENTRY'
+export const ADD_ENTRY_SUCCESS = 'ADD_ENTRY_SUCCESS'
+export const ADD_ENTRY_FAIL = 'ADD_ENTRY_FAIL'
 
 export const addEntry = text => ({
   type: ADD_ENTRY,

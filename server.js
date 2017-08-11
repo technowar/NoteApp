@@ -22,16 +22,6 @@ connect()
   .on('disconnected', connect)
   .once('open', listen);
 
-function listen() {
-  App.listen(3000, function(error) {
-    if (error) {
-      throw error;
-    }
-
-    console.log('Starting server');
-  });
-}
-
 function connect() {
   var config = require('./app/config.json');
   var database = [
@@ -50,4 +40,14 @@ function connect() {
     keepAlive: true,
     reconnectTries: 30
   }).connection;
+}
+
+function listen() {
+  App.listen(3000, function(error) {
+    if (error) {
+      throw error;
+    }
+
+    console.log('Starting server');
+  });
 }
