@@ -1,5 +1,6 @@
 import {
-  ADD_ENTRY
+  ADD_ENTRY,
+  GET_ENTRIES
 } from '../actions/actionTypes'
 
 const entry = (state = [], action) => {
@@ -8,6 +9,8 @@ const entry = (state = [], action) => {
       return [...state, {
         text: action.text
       }]
+    case GET_ENTRIES:
+      return state
     default:
       return state
   }

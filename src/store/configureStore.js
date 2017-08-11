@@ -6,7 +6,7 @@ import {
 
 import reducer from '../reducers'
 
-export default function configureStore() {
+export default function ConfigureStore() {
   return createStore(
     reducer,
     applyMiddleware(thunk)
