@@ -1,6 +1,6 @@
 import {
   ADD_ENTRY
-} from '../actions/entry'
+} from '../actions/actionTypes'
 
 const entry = (state = [], action) => {
   switch (action.type) {

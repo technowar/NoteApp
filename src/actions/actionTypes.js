@@ -1,0 +1,3 @@
+export const ADD_ENTRY = 'ADD_ENTRY'
+export const ADD_ENTRY_SUCCESS = 'ADD_ENTRY_SUCCESS'
+export const ADD_ENTRY_FAIL = 'ADD_ENTRY_FAIL'
