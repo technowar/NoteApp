@@ -1,16 +1,14 @@
 import {
-  ADD_ENTRY,
-  GET_ENTRIES
+  ADD_ENTRY_SUCCESS,
+  GET_ENTRIES_SUCCESS
 } from '../actions/actionTypes'
 
 const entry = (state = [], action) => {
   switch (action.type) {
-    case ADD_ENTRY:
-      return [...state, {
-        text: action.text
-      }]
-    case GET_ENTRIES:
-      return state
+    case ADD_ENTRY_SUCCESS:
+      return [...state, action.response]
+    case GET_ENTRIES_SUCCESS:
+      return action.response
     default:
       return state
   }
