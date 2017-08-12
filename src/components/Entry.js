@@ -1,23 +1,21 @@
-// import React from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 
-// const Entries = ({ entries }) => {
-//   if (entries.length) {
-//     return (
-//       <div className='eight columns offset-by-two'>
-//         <h1>
-//           Entries
-//         </h1>
-//       </div>
-//     )
-//   }
+const Entry = ({ entry, isDeleted, createdAt, modifiedAt }) => {
+  return (
+    <div>
+      {entry}
+      Created: {createdAt}
+      Modified: {modifiedAt}
+    </div>
+  )
+}
 
-//   return (
-//     <div className='eight columns offset-by-two'>
-//       <h3 className='u-pull-center'>
-//         Fill {'\''}em up!
-//       </h3>
-//     </div>
-//   )
-// }
+Entry.propTypes = {
+  entry: PropTypes.string.isRequired,
+  isDeleted: PropTypes.bool.isRequired,
+  createdAt: PropTypes.string.isRequired,
+  modifiedAt: PropTypes.string.isRequired
+}
 
-// export default Entries
+export default Entry

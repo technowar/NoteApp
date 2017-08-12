@@ -1,4 +1,13 @@
+form {
+  padding: 20px;
+  margin-bottom: 0;
+}
+
 textarea {
   resize: none;
   height: 100px;
+}
+
+.form-container {
+  background-color: #E6ECF0;
 }

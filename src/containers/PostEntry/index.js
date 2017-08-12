@@ -21,7 +21,7 @@ let PostEntry = ({ dispatch }) => {
   }
 
   return (
-    <div className='eight columns offset-by-two'>
+    <div className='eight columns offset-by-two form-container'>
       <form>
         <textarea
           className='u-full-width'

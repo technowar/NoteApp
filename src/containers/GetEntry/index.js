@@ -1,6 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
+import Entry from '../../components/Entry'
+
 import './index.css'
 
 const Entries = props => {
@@ -18,9 +20,12 @@ const Entries = props => {
 
   return (
     <div className='eight columns offset-by-two'>
-      <h1>
-        Entries
-      </h1>
+      {props.entries.map(entry =>
+        <Entry
+          key={entry._id}
+          {...entry}
+        />
+      )}
     </div>
   )
 }
