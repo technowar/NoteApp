@@ -6,9 +6,9 @@ import {
 const entry = (state = [], action) => {
   switch (action.type) {
     case ADD_ENTRY_SUCCESS:
-      return [...state, action.response]
+      return [...state, JSON.parse(action.response)]
     case GET_ENTRIES_SUCCESS:
-      return action.response
+      return JSON.parse(action.response)
     default:
       return state
   }

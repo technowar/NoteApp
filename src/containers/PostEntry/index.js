@@ -21,22 +21,24 @@ let PostEntry = ({ dispatch }) => {
   }
 
   return (
-    <div className='eight columns offset-by-two form-container'>
-      <form>
-        <textarea
-          className='u-full-width'
-          placeholder={'What\'s happening?'}
-          ref={node => {
-            input = node
-          }}>
-        </textarea>
-        <input
-          className='button-primary'
-          type='submit'
-          value='Submit'
-          onClick={onHandleSubmit}
-        />
-      </form>
+    <div className='eight columns offset-by-two'>
+      <div className='form-container'>
+        <form>
+          <textarea
+            className='u-full-width'
+            placeholder={'What\'s happening?'}
+            ref={node => {
+              input = node
+            }}>
+          </textarea>
+          <input
+            className='button-primary'
+            type='submit'
+            value='Submit'
+            onClick={onHandleSubmit}
+          />
+        </form>
+      </div>
     </div>
   )
 }

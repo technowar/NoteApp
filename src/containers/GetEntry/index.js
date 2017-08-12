@@ -10,9 +10,9 @@ const Entries = props => {
     return (
       <div className='eight columns offset-by-two'>
         <div className='u-pull-center'>
-          <h3>
+          <div className='entry'>
             Nothing to display
-          </h3>
+          </div>
         </div>
       </div>
     )
@@ -20,12 +20,7 @@ const Entries = props => {
 
   return (
     <div className='eight columns offset-by-two'>
-      {props.entries.map(entry =>
-        <Entry
-          key={entry._id}
-          {...entry}
-        />
-      )}
+      <Entry entries={props.entries}/>
     </div>
   )
 }

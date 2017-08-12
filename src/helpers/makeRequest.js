@@ -23,7 +23,6 @@ export function makeRequest (method, url, args) {
       xhr.send(path)
     } else {
       xhr.open(method, url)
-      xhr.responseType = 'json'
       xhr.send()
     }
 

@@ -28,7 +28,7 @@ export const getEntriesFail = error => ({
 
 export function createEntry(text) {
   return dispatch => {
-    makeRequest('POST', '/entry', {
+    return makeRequest('POST', '/entry', {
       entry: text
     }).then(
       response => dispatch(addEntrySuccess(response)),
@@ -39,7 +39,7 @@ export function createEntry(text) {
 
 export function retrieveEntries() {
   return dispatch => {
-    makeRequest('GET', '/entry').then(
+    return makeRequest('GET', '/entry').then(
       response => dispatch(getEntriesSuccess(response)),
       error => dispatch(getEntriesFail(error))
     )

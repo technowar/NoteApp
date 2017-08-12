@@ -1,21 +1,20 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const Entry = ({ entry, isDeleted, createdAt, modifiedAt }) => {
+const Entry = ({ entries }) => {
   return (
-    <div>
-      {entry}
-      Created: {createdAt}
-      Modified: {modifiedAt}
+    <div className='entries-container'>
+      {entries.map(entry =>
+        <div className='entry' key={entry._id}>
+          {entry.entry}
+        </div>
+      )}
     </div>
   )
 }
 
 Entry.propTypes = {
-  entry: PropTypes.string.isRequired,
-  isDeleted: PropTypes.bool.isRequired,
-  createdAt: PropTypes.string.isRequired,
-  modifiedAt: PropTypes.string.isRequired
+  entries: PropTypes.array.isRequired
 }
 
 export default Entry
