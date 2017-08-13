@@ -2,9 +2,22 @@
   text-align: center;
 }
 
-.entry {
+.entries-container {
   margin: 10px 0;
+}
+
+.entry {
   padding: 10px;
-  border: 1px solid #E6ECF0;
-  border-radius: 4px;
+  border-top: 1px solid #E6ECF0;
+  border-right: 1px solid #E6ECF0;
+  border-left: 1px solid #E6ECF0;
+  white-space: pre-line;
+}
+
+.entry:last-child {
+  border-bottom: 1px solid #E6ECF0;
+}
+
+.entry:hover {
+  background-color: #F5F8FA;
 }
