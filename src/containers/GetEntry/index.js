@@ -9,9 +9,9 @@ const Entries = props => {
   if (!props.entries.length) {
     return (
       <div className='eight columns offset-by-two'>
-        <div className='entries-container u-pull-center'>
+        <div className='entries-container center'>
           <div className='entry'>
-            Nothing to display
+            <span>Nothing to display</span>
           </div>
         </div>
       </div>

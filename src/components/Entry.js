@@ -6,7 +6,12 @@ const Entry = ({ entries }) => {
     <div className='entries-container'>
       {entries.map(entry =>
         <div className='entry' key={entry._id}>
-          {entry.entry}
+          <div className='date-container'>
+            <span>{moment(entry.createdAt).fromNow()}</span>
+          </div>
+          <div className='content-container'>
+            <span>{entry.entry}</span>
+          </div>
         </div>
       )}
     </div>

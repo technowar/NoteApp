@@ -1,4 +1,4 @@
-.u-pull-center {
+.center {
   text-align: center;
 }
 
@@ -20,4 +20,12 @@
 
 .entry:hover {
   background-color: #F5F8FA;
+}
+
+.entry .date-container {
+  font-size: x-small;
+}
+
+.entry .date-container span {
+  color: #A9A9A9;
 }
