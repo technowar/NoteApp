@@ -3,17 +3,18 @@ import PropTypes from 'prop-types'
 
 const Entry = ({ entries }) => {
   return (
-    <div className='entries-container'>
-      {entries.map(entry =>
-        <div className='entry' key={entry._id}>
-          <div className='date-container'>
-            <span>{moment(entry.createdAt).fromNow()}</span>
+    <div className={entries.length ? 'entries-container' : 'entries-container center'}>
+      {entries.length ?
+        entries.map(entry =>
+          <div className='entry' key={entry._id}>
+            <span className='date'>{moment(entry.createdAt).fromNow()}</span>
+            <span className='content'>{entry.entry}</span>
           </div>
-          <div className='content-container'>
-            <span>{entry.entry}</span>
+        ) :
+          <div className='entry'>
+            <span>Nothing to display</span>
           </div>
-        </div>
-      )}
+      }
     </div>
   )
 }

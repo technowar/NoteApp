@@ -22,10 +22,8 @@
   background-color: #F5F8FA;
 }
 
-.entry .date-container {
+.entry .date {
+  display: block;
   font-size: x-small;
-}
-
-.entry .date-container span {
   color: #A9A9A9;
 }
